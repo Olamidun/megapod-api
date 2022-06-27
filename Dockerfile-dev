@@ -1,0 +1,11 @@
+FROM python:3.8-slim-buster
+
+RUN mkdir -p /usr/src/megapod
+
+WORKDIR /usr/src/megapod
+
+COPY ./requirements.txt /usr/src/megapod/requirements.txt
+
+RUN pip install -r requirements.txt
+
+COPY . /usr/src/megapod/
